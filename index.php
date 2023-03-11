@@ -6,7 +6,7 @@
 
         $imc["valor"]= $arr["peso"]/(($arr["altura"]*$arr["altura"])/10000);
         if($imc["valor"]<18.5){
-            $imc["classificacao"]="MAGREZA";
+            $imc["classificacao"]="MAGRO";
             $imc["grau"]="0";
         }elseif($imc["valor"]<24.9){
             $imc["classificacao"]="NORMAL";
@@ -26,7 +26,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	 	 <title>IMC</title>
+	 	 <title>Formula IMC</title>
 </head>
 <body>
  <form method="POST" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
@@ -37,8 +37,8 @@
 
  <?php
     if(isset($imc["valor"])){
-        echo "<h3>O usuário ".$arr["nome"]." com peso ".$arr["peso"]." e altura ".$arr["altura"]."</h3>";
-        echo "<h3>Foi classificado como ".$imc["classificacao"]." Grau de obesidade ".$imc["grau"]." do imc = ".$imc["valor"]."</h3>";
+        echo "<h2>O usuário ".$arr["nome"]." com peso ".$arr["peso"]." e altura ".$arr["altura"]."</h2>";
+        echo "<h2>Foi classificado como ".$imc["classificacao"]." Grau de obesidade ".$imc["grau"]." do imc = ".$imc["valor"]."</h2>";
     }
  ?>
  </form>
